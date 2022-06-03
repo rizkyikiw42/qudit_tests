@@ -12,12 +12,6 @@ U = np.array(
              [0, 1, 0]])
 
 
-# dev = DefaultQutrit(wires=1)
-# op = QutritUnitary(U, wires=0)
-# dev.apply([op])
-
-# print(dev.probability(wires=0))
-
 dev = qml.device('default.qutrit', wires=3)
 
 @qml.qnode(dev)
@@ -49,7 +43,6 @@ def test_swap():
 state=test_swap()
 print(state)
 print(state[21])
-print(np.allclose(state[21], OMEGA**3))
 
-# for i in range(5):
-#     print(OMEGA**i)
+for i in range(5):
+    print(OMEGA**i)
