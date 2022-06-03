@@ -27,8 +27,8 @@ def test(iters):
     return qml.probs(wires=0)
 
 
-# for i in range(4):
-#     print(test(i))
+for i in range(4):
+    print(test(i))
 
 
 @qml.qnode(dev)
