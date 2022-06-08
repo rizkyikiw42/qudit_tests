@@ -10,7 +10,7 @@ from tests.devices.test_default_qubit import TestInverseDecomposition
 OMEGA = np.exp(2 * np.pi * 1j / 3)
 
 
-U_thadamard = np.multiply(1 / np.sqrt(2),
+U_thadamard_01 = np.multiply(1 / np.sqrt(2),
                 np.array(
                     [[1, 1, 0],
                      [1, -1, 0],
@@ -29,7 +29,8 @@ U_tswap = np.array(
         [0, 0, 1, 0, 0, 0, 0, 0, 0],
         [0, 0, 0, 0, 0, 1, 0, 0, 0],
         [0, 0, 0, 0, 0, 0, 0, 0, 1]
-    ]
+    ],
+    dtype=np.complex128
 )
 
 
