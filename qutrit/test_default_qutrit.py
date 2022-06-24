@@ -34,15 +34,17 @@ U_tswap = np.array(
 )
 
 
-dev = qml.device("default.qutrit", wires=1, shots=10)
+dev = qml.device("default.qutrit", wires=2)
 
 
 
 @qml.qnode(dev)
 def test_qnode():
-    qml.QutritUnitary(U_thadamard_01, wires=0)
+    qml.TShift(wires=0)
+    qml.TShift(wires=1)
+    qml.TAdd(wires=[0, 1])
 
-    return qml.probs(wires=0)
+    return qml.state()
 
 if __name__ == "__main__":
     print(test_qnode())
