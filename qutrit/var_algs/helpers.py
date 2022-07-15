@@ -44,9 +44,9 @@ def make_predictions(data, model, weights, classes=2):
         for idx in range(len(data)):
             estimated_expval = model(data[idx], weights)
 
-            if estimated_expval >= 0.5:
+            if estimated_expval >= 1 / 3:
                 preds.append(1)
-            elif estimated_expval <= -0.5:
+            elif estimated_expval <= -1 / 3:
                 preds.append(-1)
             else:
                 preds.append(0)
